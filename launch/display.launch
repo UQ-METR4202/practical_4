@@ -1,0 +1,15 @@
+<launch>
+
+<!-- Loading URDF file to the parameters server-->
+<param name="robot_description" command="$(find xacro)/xacro $(find practical_4)/urdf/two_link_robot.xml" />
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+</node>
+
+<!-- Joint state publisher GUI -->
+<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+<!-- Launch RVIZ -->
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find practical_4)/rviz/urdf.rviz" required="true" />
+
+</launch>
