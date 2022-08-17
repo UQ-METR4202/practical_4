@@ -1,8 +1,9 @@
 <launch>
 
-<!-- Loading URDF file to the parameters server-->
+<!-- Loading URDF file to the parameters server -->
 <param name="robot_description" command="$(find xacro)/xacro $(find practical_4)/urdf/two_link_robot.xml" />
 
+<!-- Launch the Robot state publisher node for RViz -->
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
 </node>
 
